@@ -35,7 +35,42 @@
   配置 `Project Settings -> Package Manager -> Scoped Registeries`  
   然后在包管理器中添加包  
 
-## 提升
+## 用法
+
+```cs
+// 创建
+var ulid = BurstUlid.NewUlid();
+
+// 使用外部随机器
+var rand = new Random(seed);
+var ulid = BurstUlid.NewUlid(ref rand);
+
+// 使用 RNGCryptoServiceProvider 随机
+var ulid = BurstUlid.NewUlidCryptoRand();
+
+// 托管 to string
+var str = ulid.ToString();
+
+// burst 编译 to string
+FixedString32Bytes str = ulid.ToFixedString();
+
+// 转换成 guid
+var guid = ulid.ToGuid();
+
+// 从 guid 转回来
+var ulid = BurstUlid.FromGuid(guid);
+
+// 解析字符串
+var ulid = BurstUlid.Parse(str);
+
+// 尝试解析字符串
+if (BurstUlid.TryParse(str, out var ulid)) {}
+
+// 获取网络格式 (大端序)
+v128 net = ulid.ToNetFormat();
+```
+
+## 提示
 
 - 此包没有在 `package.json` 内要求依赖项,  
   你需要手动确保 ↓ 依赖项存在  

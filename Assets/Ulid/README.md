@@ -35,6 +35,41 @@ Ulid implemented using burst
   config `Project Settings -> Package Manager -> Scoped Registeries`  
   then add package in package manager  
 
+## How to use
+
+```cs
+// create
+var ulid = BurstUlid.NewUlid();
+
+// use an external randomizer
+var rand = new Random(seed);
+var ulid = BurstUlid.NewUlid(ref rand);
+
+// random by RNGCryptoServiceProvider
+var ulid = BurstUlid.NewUlidCryptoRand();
+
+// to string in managed
+var str = ulid.ToString();
+
+// to string in burst
+FixedString32Bytes str = ulid.ToFixedString();
+
+// cast to guid
+var guid = ulid.ToGuid();
+
+// cast from guid
+var ulid = BurstUlid.FromGuid(guid);
+
+// parse string
+var ulid = BurstUlid.Parse(str);
+
+// try parse string
+if (BurstUlid.TryParse(str, out var ulid)) {}
+
+// get net format (big endian)
+v128 net = ulid.ToNetFormat();
+```
+
 ## Tips
 
 - This package does not require a dependency in `package.json`,  
