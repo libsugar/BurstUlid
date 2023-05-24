@@ -6,6 +6,8 @@
 
 使用 Burst 实现的 Ulid 
 
+![ulid](https://raw.githubusercontent.com/libsugar/BurstUlid/main/ulid-logo.png)
+
 ## 安装
 
 - Unity Package 由 [npmjs](https://www.npmjs.com/package/com.libsugar.unity.burstulid)
