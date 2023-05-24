@@ -1,7 +1,7 @@
 # BurstUlid
 
-[![NPM](https://img.shields.io/npm/v/com.libsugar.sugar.unity.burstulid)](https://www.npmjs.com/package/com.libsugar.sugar.unity.burstulid)
-[![openupm](https://img.shields.io/npm/v/com.libsugar.sugar.unity.burstulid?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.libsugar.sugar.unity.burstulid/)
+[![NPM](https://img.shields.io/npm/v/com.libsugar.unity.burstulid)](https://www.npmjs.com/package/com.libsugar.unity.burstulid)
+[![openupm](https://img.shields.io/npm/v/com.libsugar.unity.burstulid?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.libsugar.unity.burstulid/)
 ![MIT](https://img.shields.io/github/license/libsugar/BurstUlid)
 
 使用 Burst 实现的 Ulid 
