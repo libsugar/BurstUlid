@@ -1,0 +1,21 @@
+{
+    "name": "LibSugar.Unity.BurstUlid.Editor",
+    "rootNamespace": "LibSugar.Unity.Editor",
+    "references": [
+        "LibSugar.Unity.BurstUlid",
+        "Unity.Burst",
+        "Unity.Mathematics",
+        "Unity.Collections"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

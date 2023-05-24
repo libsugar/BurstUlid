@@ -1,0 +1,22 @@
+﻿{
+  "name": "com.libsugar.unity.burstulid",
+  "displayName": "Burst Ulid",
+  "version": "0.1.0",
+  "unity": "2022.2",
+  "description": "Ulid implemented using burst",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libsugar/BurstUlid.git"
+  },
+  "keywords": [
+    "unity", "libsugar", "utility", "ulid"
+  ],
+  "author": "libsugar",
+  "license": "MIT",
+  "category": "ulid",
+  "bugs": {
+    "url": "https://github.com/libsugar/BurstUlid/issues"
+  },
+  "homepage": "https://github.com/libsugar/BurstUlid#readme",
+  "dependencies": {}
+}

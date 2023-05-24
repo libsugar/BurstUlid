@@ -1,0 +1,24 @@
+{
+    "name": "LibSugar.Unity.BurstUlid",
+    "rootNamespace": "LibSugar.Unity",
+    "references": [
+        "Unity.Burst",
+        "Unity.Mathematics",
+        "Unity.Collections"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "org.nuget.system.text.json",
+            "expression": "6.0.0",
+            "define": "HAS_SYSTEM_TEXT_JSON"
+        }
+    ],
+    "noEngineReferences": false
+}
