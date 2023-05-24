@@ -4,13 +4,13 @@
 [![openupm](https://img.shields.io/npm/v/com.libsugar.sugar.unity.burstulid?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.libsugar.sugar.unity.burstulid/)
 ![MIT](https://img.shields.io/github/license/libsugar/BurstUlid)
 
-Ulid implemented using burst
+使用 Burst 实现的 Ulid 
 
-## Installation
+## 安装
 
-- Unity Package by [npmjs](https://www.npmjs.com/package/com.libsugar.unity.burstulid)
+- Unity Package 由 [npmjs](https://www.npmjs.com/package/com.libsugar.unity.burstulid)
 
-  Edit your `Packages/manifest.json` file like this
+  如下编辑你的 `Packages/manifest.json` 文件
 
   ```json
   {
@@ -29,14 +29,14 @@ Ulid implemented using burst
   }
   ```
 
-  or use gui in unity editor  
-  config `Project Settings -> Package Manager -> Scoped Registeries`  
-  then add package in package manager  
+  或者在 unity 编辑器中操作  
+  配置 `Project Settings -> Package Manager -> Scoped Registeries`  
+  然后在包管理器中添加包  
 
-## Tips
+## 提升
 
-- This package does not require a dependency in `package.json`,  
-  you need to manually ensure ↓ dependencies exist
+- 此包没有在 `package.json` 内要求依赖项,  
+  你需要手动确保 ↓ 依赖项存在  
 
   - `Unity.Burst`
   - `Unity.Mathematics`
@@ -44,19 +44,19 @@ Ulid implemented using burst
   - `System.Runtime.CompilerServices.Unsafe`
   - `System.Text.Json` (optional)
 
-- This implementation is not fully compliant with the [Ulid Standard](https://github.com/ulid/spec)
+- 此实现不完全符合 [Ulid 标准](https://github.com/ulid/spec)
 
-  - No [monotonicity](https://github.com/ulid/spec#monotonicity)
-  - Memory layout uses little endian
+  - 没有 [单调性 (monotonicity)](https://github.com/ulid/spec#monotonicity)
+  - 内存布局使用小端序
 
-    You can convert to big endian using `ToNetFormat` or `WriteNetFormatBytes`
+    你可以使用 `ToNetFormat` 或 `WriteNetFormatBytes` 转换成大端序  
 
     ```cs
     var ulid = BurstUlid.NewUlid();
     v128 net_format = ulid.ToNetFormat();
     ```
 
-    - Binary layout in memory (if memory is Little-Endian)
+    - 内存中的二进制布局 (如果内存是小端序的)
 
       ```
       0                   1                   2                   3
@@ -72,7 +72,7 @@ Ulid implemented using burst
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       ```
 
-    - Binary layout in net (and ulid stand)
+    - 网络中的二进制布局 (以及 ulid 标准)
 
       ```
       0                   1                   2                   3
@@ -88,14 +88,14 @@ Ulid implemented using burst
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
       ```
 
-- Because some magic is used to bypass the limitation that burst cannot call managed code, so if you want to use it before `[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]`, you need to call `InitStatic` manually
+- 因为用了一些魔法来绕过 burst 不能调用托管代码的限制，所以如果你想在 `[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]` 之前使用， 你需要手动调用 `InitStatic`  
 
   ```csharp
   BurstUlid.InitStatic();
   ```
 
-  Use in general unity life cycle, such as `Awake`, `Start`, `Update` can ignore this promotion
+  在一般的 unity 生命周期中使用， 比如 `Awake`、 `Start`、 `Update`， 可以忽略此条提示  
 
-## Benchmark
+## 基准测试
 
-![benchmark](https://raw.githubusercontent.com/libsugar/BurstUlid/main/benchmark.png)
+![基准](https://raw.githubusercontent.com/libsugar/BurstUlid/main/benchmark.png)
